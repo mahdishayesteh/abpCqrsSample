@@ -11,5 +11,6 @@ namespace abpcqrstest.ItemCrudService
     public interface IItemCrudAppService : IApplicationService
     {
         Task<Dto.itemOutputDto> Insert(Dto.itemInputDto itemInput);
+        Task<Dto.itemOutputDto> Get(int Id);
     }
 }

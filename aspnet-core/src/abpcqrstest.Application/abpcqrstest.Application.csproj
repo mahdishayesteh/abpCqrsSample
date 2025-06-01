@@ -15,9 +15,6 @@
     <ProjectReference Include="..\abpcqrstest.Core\abpcqrstest.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ItemCrudService\Query\" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="MediatR" Version="12.5.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
   </ItemGroup>

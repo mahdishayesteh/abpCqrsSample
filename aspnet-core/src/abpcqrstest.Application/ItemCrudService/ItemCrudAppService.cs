@@ -1,6 +1,8 @@
 ﻿using abpcqrstest.ItemCrudService.Command;
 using abpcqrstest.ItemCrudService.Dto;
+using abpcqrstest.ItemCrudService.Query;
 using MediatR;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +19,15 @@ namespace abpcqrstest.ItemCrudService
             _mediator = mediator;
         }
 
+        public Task<itemOutputDto> Get(int Id)
+        {
+            var result = _mediator.Send(new GetQuery { Id = Id });
+            return result;
+        }
+
         public Task<itemOutputDto> Insert(Dto.itemInputDto itemInput)
         {
-            var result = _mediator.Send(new ItemInputCommand { Name = itemInput.Name});
+            var result = _mediator.Send(new ItemInputCommand { Name = itemInput.Name });
 
             return result;
         }
